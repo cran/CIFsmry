@@ -4,13 +4,13 @@
 #include <cmath>
 #include "newplt.h"
 #include <R.h>
-#include <rmath.h>
+#include <Rmath.h>
 #include <iomanip>
 #include <new>
 
 using namespace std;
 
-void bubble_sort(double arrin[], int n){
+void bubble_sort(vector<double> &arrin, int n){
 	double temp;
 	for(int i = 0; i < n-1; i++){
 		for(int j = 0; j < n-i-1; j++){
@@ -255,8 +255,9 @@ void PLT::CIF_est(double **ny, double **f1, double **sgf1, double ***xf1){
 	return;
 }
 
-void PLT::G_est(int ntau1, int ntau2, double **f1, double **sgf1, double f1diff[], double sgf1diff[], double pvf1diff[], 
-			double rr11[], double sgrr11[], double pvrr11[], double rr12[], double sgrr12[], double pvrr12[]){
+void PLT::G_est(int ntau1, int ntau2, double **f1, double **sgf1, vector<double> &f1diff, 
+			vector<double> &sgf1diff, vector<double> &pvf1diff, vector<double> &rr11, vector<double> &sgrr11, 
+			vector<double> &pvrr11, vector<double> &rr12, vector<double> &sgrr12, vector<double> &pvrr12){
 	double stat;
 	double tmp1,tmp2;
 	double u1,v1;
@@ -344,7 +345,7 @@ void PLT::WT(double *wt, int ntau1, int ntau2){
 	}
 }
 
-void PLT::Ave_est(int ntau1, int ntau2, double **f1, double ***xf1, double rr11[], double rr12[], double *wt, 
+void PLT::Ave_est(int ntau1, int ntau2, double **f1, double ***xf1, vector<double> &rr11, vector<double> &rr12, double *wt, 
 				 double *ave, double *avese, double *aveu95, double *avel95, double *avepval){
 	double avef1d, sgavef1d, pv1d;
 	double ave1dcil, ave1dciu;
@@ -437,12 +438,16 @@ void PLT::Ave_est(int ntau1, int ntau2, double **f1, double ***xf1, double rr11[
 }
 
 
-void PLT::CB(int ntau1, int ntau2, double **f1, double **sgf1, double ***xf1, double sgrr11[], double sgrr12[], double *cbcut, int *n_sim){
+void PLT::CB(int ntau1, int ntau2, double **f1, double **sgf1, double ***xf1, 
+			vector<double> &sgrr11, vector<double> &sgrr12, double *cbcut, int *n_sim){
 	int NRUN = *n_sim;
 	Array2D<double> gn(NOGP,N,0.);
-	double wb1diff[NRUN];	
-	double wbrr11[NRUN];
-	double wbrr12[NRUN];
+	// double wb1diff[NRUN];	
+	// double wbrr11[NRUN];
+	// double wbrr12[NRUN];
+	vector<double> wb1diff(NRUN);
+	vector<double> wbrr11(NRUN);
+	vector<double> wbrr12(NRUN);
 	double wmax1d, wmaxrr11, wmaxrr12;
 	double xd12, sdd12;
 	double tmp1, tmp2, wtmp1d, u1, v1; 

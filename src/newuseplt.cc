@@ -32,7 +32,17 @@ void plt_main(double *p, double *q, int *n, double *tt, double *cause, double *g
 	NJP = *njp;
 	int ntau1=0, ntau2=0;
 
-	double f1diff[N+1], sgf1diff[N+1], pvf1diff[N+1], rr11[N+1], sgrr11[N+1], pvrr11[N+1], rr12[N+1], sgrr12[N+1], pvrr12[N+1];
+	//double f1diff[N+1], sgf1diff[N+1], pvf1diff[N+1], rr11[N+1], sgrr11[N+1], pvrr11[N+1], rr12[N+1], sgrr12[N+1], pvrr12[N+1];
+	vector<double> f1diff(N+1);
+	vector<double> sgf1diff(N+1);
+	vector<double> pvf1diff(N+1);
+	vector<double> rr11(N+1);
+	vector<double> sgrr11(N+1);
+	vector<double> pvrr11(N+1);
+	vector<double> rr12(N+1);
+	vector<double> sgrr12(N+1);
+	vector<double> pvrr12(N+1);
+	
 	// //rr_ij, i=cause, j=1, rr; j=2, or.
 	double **ny = new double *[NOGP];
 	for(int i=0;i<NOGP;i++) ny[i] = new double[N+1];

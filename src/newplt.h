@@ -8,8 +8,10 @@
 #include "jamatnt/tnt_array1d_utils.h"
 #include "jamatnt/tnt_array2d_utils.h"
 #include "jamatnt/tnt_array3d_utils.h"
+#include <vector>
 
 using namespace TNT;
+using namespace std;
 
 class PLT{
 	int N;					//Total number of obs
@@ -32,12 +34,14 @@ class PLT{
 public:
 	PLT(double *p, double *q, int *n, double *tt, double *group, double *cause, int *size, int *njp, double *tjp);
 	void CIF_est(double **ny, double **f1, double **sgf1, double ***xf1);
-	void G_est(int ntau1, int ntau2, double **f1, double **sgf1, double f1diff[], double sgf1diff[], double pvf1diff[], 
-			double rr11[], double sgrr11[], double pvrr11[], double rr12[], double sgrr12[], double pvrr12[]);
+	void G_est(int ntau1, int ntau2, double **f1, double **sgf1, vector<double> &f1diff, 
+			vector<double> &sgf1diff, vector<double> &pvf1diff, vector<double> &rr11, vector<double> &sgrr11, 
+			vector<double> &pvrr11, vector<double> &rr12, vector<double> &sgrr12, vector<double> &pvrr12);
 	void WT(double *wt, int ntau1, int ntau2);		
-	void Ave_est(int ntau1, int ntau2, double **f1, double ***xf1, double rr11[], double rr12[], 
+	void Ave_est(int ntau1, int ntau2, double **f1, double ***xf1, vector<double> &rr11, vector<double> &rr12, 
 				double *wt, double *ave, double *avese, double *aveu95, double *avel95, double *avepval);
-	void CB(int ntau1, int ntau2, double **f1, double **sgf1, double ***xf1, double sgrr11[], double sgrr12[], double *cbcut, int *n_sim);
+	void CB(int ntau1, int ntau2, double **f1, double **sgf1, double ***xf1, 
+			vector<double> &sgrr11, vector<double> &sgrr12, double *cbcut, int *n_sim);
 	
 };
 
