@@ -1,0 +1,5 @@
+exportPattern("^[[:alpha:]]+")
+useDynLib(CIFsmry)
+export("CIFsm","print.CIFsm","summary.CIFsm")
+S3method(summary,CIFsm)
+S3method(print,CIFsm)
