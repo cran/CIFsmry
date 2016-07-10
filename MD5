@@ -1,4 +1,4 @@
-bc4f571bf34d990752a318666fa4713a *DESCRIPTION
+8d2c1a5ba1093c9908e8033ddf94bdd9 *DESCRIPTION
 dec337757fc849a345bc1edc6e08f1d8 *NAMESPACE
 2dbb1e8409012ded1f10b93a7ad9c97a *R/simu.R
 d8100f8ec79ccd641413a94bedc6976a *data/sim.dat.txt.gz
@@ -31,6 +31,6 @@ f99fa4e430a2c4c0e26410f7a0282efa *src/jamatnt/tnt_math_utils.h
 616fd2cf8dcf8640e84f2f493043aa21 *src/jamatnt/tnt_subscript.h
 c8aac7a43ea2164473ed4c6cbe5b01ac *src/jamatnt/tnt_vec.h
 c1836816b8636f65842b7e942ac8adde *src/jamatnt/tnt_version.h
-28c2652299e9733ec55626b58d21e128 *src/newplt.cc
+6af66668fa60e1bfebfb56fea5dbc830 *src/newplt.cc
 c856fdce801ee8d18972c25219fcbc5f *src/newplt.h
-83c688eaafd069a36adaeb19e0defb1f *src/newuseplt.cc
+edf1d001b6bf358b9bb9b60a7f3cb386 *src/newuseplt.cc

@@ -3,10 +3,11 @@
 #include <fstream>
 #include <cmath>
 #include "newplt.h"
-#include <R.h>
-#include <Rmath.h>
 #include <iomanip>
 #include <new>
+#include <R.h>
+#include <Rmath.h>
+
 
 using namespace std;
 

@@ -4,9 +4,10 @@
 #include <fstream>
 #include <cmath>
 #include "newplt.h"
+#include <iomanip>
 #include <R.h>
 #include <Rmath.h>
-#include <iomanip>
+
 
 using namespace std;
 
